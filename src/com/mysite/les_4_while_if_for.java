@@ -5,55 +5,81 @@ import java.util.Scanner;
 public class les_4_while_if_for {
 
     public static void main(String[] args) {
-        Scanner in= new Scanner(System.in);
+            Scanner in = new Scanner(System.in);
+            System.out.println("Which task do you want to start");
+            String task = in.next();
 
-        System.out.println("Enter height");
-        int height = in.nextInt();
+            switch (task) {
 
-        System.out.println("Enter width");
-        int width = in.nextInt();
-        int i = 0;
-
-        while (i < height) {
-
-            i++;
-            {
-
-                for (int a = 0; a < width; a++) {
-
-                    System.out.print("*");
+                case "1": {
+                    while_lenght();
+                    break;
                 }
+                case "2": {
+                    access_with_3_attempts();
+                    break;
+                }
+                case"3": {
+                    summ_in_number();
+                    break;
+                }
+                case "4": {
+                    repeatStr();
+                    break;
+                }
+                default:
+                    System.out.println("wrong number of task");
 
             }
-            System.out.println(" ");
+        }
+
+        private static void while_lenght() {
+            Scanner in = new Scanner(System.in);
+
+            System.out.println("Enter height");
+            int height = in.nextInt();
+
+            System.out.println("Enter width");
+            int width = in.nextInt();
+            int i = 0;
+
+            while (i < height) {
+
+                i++;
+                {
+
+                    for (int a = 0; a < width; a++) {
+
+                        System.out.print("*");
+                    }
+
+                }
+                System.out.println(" ");
+            }
         }
 
 
+    private static void access_with_3_attempts() {
+        Scanner in = new Scanner(System.in);
         System.out.println("Please, enter your pass");
-
-
         String expected = "yev";
-        int retries= 3;
+        int retries = 3;
 
-        for (int a=0;  a < retries ; a++){
-            String  pass= in.next();
+        for (int a = 0; a < retries; a++) {
+            String pass = in.next();
 
 
-            if (pass.equals(expected))
-            {
+            if (pass.equals(expected)) {
                 System.out.println("Correct, welcome back");
                 break;
-            }
-            else if ((a==2) && (expected!=pass)){
+            } else if ((a == 2) && (expected != pass)) {
                 System.out.println("Sorry but you have been locked out");
 
-            }
-
-            else  {
+            } else {
                 System.out.println("Incorrect, try again");
             }
         }
-
+    }
 
 
 //        Write a program that finds the summation of every number from 1 to num.
@@ -61,15 +87,17 @@ public class les_4_while_if_for {
 
 //        https://nimb.ws/8PmHWr
 
-
+    private static void summ_in_number() {
+        Scanner in = new Scanner(System.in);
         System.out.println("Enter a positive integer");
         int num = in.nextInt();
 
         int sum = 0;
-        for(int b = 0; b <= num; b++) {
+        for (int b = 0; b <= num; b++) {
             sum += b;
         }
         System.out.println(sum);
+    }
 
 //        Write a function called repeatStr which repeats the given string string exactly n times.
 //
@@ -78,6 +106,8 @@ public class les_4_while_if_for {
 
 //        https://nimb.ws/tmQD1c
 
+    private static void repeatStr() {
+        Scanner in = new Scanner(System.in);
         System.out.println("Enter time");
         int time = in.nextInt();
 
@@ -92,9 +122,35 @@ public class les_4_while_if_for {
 }
 
 
-
 class Additional_task {
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Which task do you want to start");
+        String task = in.next();
+
+        switch (task) {
+
+            case "1": {
+                check_duplicate_in_array();
+                break;
+            }
+            case "2": {
+                appear_array();
+                break;
+            }
+            case"3": {
+                reverse_array();
+                break;
+            }
+            case "4": {
+                summ_in_array();
+                break;
+            }
+            default:
+                System.out.println("wrong number of task");
+
+        }
+    }
 
 //            1. Program to print the duplicate elements of an array
 //            In this program, we need to print the duplicate elements present in the array.
@@ -103,7 +159,7 @@ class Additional_task {
 //            by comparing the selected element with other elements.
 //            If a match is found, print the duplicate element.
 //
-//                    Program to print the duplicate elements of an array
+//             Program to print the duplicate elements of an array
 //            In the above array, the first duplicate will be found at the index 4 which is the duplicate of the element (2) present at index 1. So, duplicate elements in the above array are 2, 3 and 8.
 //
 //            Algorithm
@@ -116,6 +172,8 @@ class Additional_task {
 //                STEP 7: PRINT arr[j]
 //            STEP 8: END
 
+    private static void check_duplicate_in_array() {
+        Scanner in = new Scanner(System.in);
 
         int[] arr = {1, 2, 3, 4, 2, 7, 8, 8, 3};
 
@@ -127,6 +185,7 @@ class Additional_task {
                 }
             }
         }
+    }
 
 //            2. Program to print the elements of an array
 //            This is a simple program to create an array and then to print it's all elements.
@@ -142,6 +201,7 @@ class Additional_task {
 //                STEP 5: PRINT arr[i]
 //            STEP 6: END
 
+    private static void appear_array() {
 
         int[] arr1 = {1, 2, 3, 4, 5};
         System.out.println("Elements of given array:");
@@ -149,6 +209,7 @@ class Additional_task {
         for (int i = 0; i < arr1.length; i++) {
             System.out.println(arr1[i]);
         }
+    }
 
 
 //            3. Program to print the elements of an array in reverse order
@@ -166,6 +227,8 @@ class Additional_task {
 //                STEP 8: PRINT a[i]
 //            STEP 9: END
 
+    private static void reverse_array() {
+
         int[] arr3 = {1, 2, 3, 4, 5};
         System.out.println("Original Array:");
         for (int c = 0; c < arr3.length; c++) {
@@ -175,6 +238,7 @@ class Additional_task {
         for (int c = arr3.length - 1; c >= 0; c--) {
             System.out.println(arr3[c]);
         }
+    }
 
 //            4. java Program to print the sum of all the items of the array
 //            In this program, we need to calculate the sum of all the elements of an array. This can be solved by looping through the array and add the value of the element in each iteration to variable sum.
@@ -193,18 +257,20 @@ class Additional_task {
 //            STEP 7: PRINT sum
 //            STEP 8: END
 
+    private static void summ_in_array() {
         int arr4[] = {1, 2, 3, 4, 5};
         int a = 0;
         for (int i = 0; i < arr4.length; i++) {
             a += arr4[i];
         }
         System.out.println("Sum of all the elements of an array: " + a);
+    }
 
 //        6.    https://nimb.ws/KHZRv0
 //          7. https://nimb.ws/x7G3Pr
 //
     }
-}
+
 
 
 

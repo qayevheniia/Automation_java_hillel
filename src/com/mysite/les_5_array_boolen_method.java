@@ -27,6 +27,7 @@ public class les_5_array_boolen_method {
                 new_method();
                 break;
             }
+
             default:
                 System.out.println("wrong task");
 
@@ -64,8 +65,6 @@ public class les_5_array_boolen_method {
         int number = in.nextInt();
         System.out.println(test1(number));
     }
-
-
 
     public static boolean test1 ( int my_number){
         boolean result = false;
