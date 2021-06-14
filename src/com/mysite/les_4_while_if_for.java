@@ -173,7 +173,6 @@ class Additional_task {
 //            STEP 8: END
 
     private static void check_duplicate_in_array() {
-        Scanner in = new Scanner(System.in);
 
         int[] arr = {1, 2, 3, 4, 2, 7, 8, 8, 3};
 
@@ -266,8 +265,12 @@ class Additional_task {
         System.out.println("Sum of all the elements of an array: " + a);
     }
 
-//        6.    https://nimb.ws/KHZRv0
-//          7. https://nimb.ws/x7G3Pr
+//        5. https://nimb.ws/H09Ahu
+//        6. https://nimb.ws/KHZRv0
+//        7. https://nimb.ws/x7G3Pr
+//        8. https://nimb.ws/ur9Ey0
+//        9. https://nimb.ws/j0mr2u
+//          10. https://nimb.ws/H5ZOR7
 //
     }
 

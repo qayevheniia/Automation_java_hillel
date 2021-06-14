@@ -156,7 +156,6 @@ public class les_3_if_switch {
         System.out.println("Please, enter a month number");
         int month_number = in.nextInt();
 
-
         System.out.println("Please, enter year");
 
         int year = in.nextInt();

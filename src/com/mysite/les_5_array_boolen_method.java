@@ -70,6 +70,7 @@ public class les_5_array_boolen_method {
         boolean result = false;
         if (my_number % 2 == 0) result = true;
         return result;
+
     }
 }
 

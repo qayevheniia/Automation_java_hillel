@@ -134,9 +134,9 @@ Your speed in km/h is 0.42089513*/
             System.out.print("Input maximum  number: ");
             int maximum = in.nextInt();
             System.out.println("random integer = " + ((minimum + (int) (Math.random() * (maximum - minimum)))));
-        }
 
     }
+}
 
 
 
