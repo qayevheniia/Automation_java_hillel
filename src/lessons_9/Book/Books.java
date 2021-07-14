@@ -1,4 +1,4 @@
-package lessons_9;
+package lessons_9.Book;
 
 public class Books{
     private String  name;

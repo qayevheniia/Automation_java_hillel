@@ -1,4 +1,6 @@
-package lessons_9;
+package lessons_9.Book;
+
+import lessons_9.Book.Books;
 
 public class Reader {
     private String FIO;
@@ -72,11 +74,11 @@ public class Reader {
     }
 
 
-    public void takeBook(Books []  books) {
+    public void takeBook(Books[]  books) {
 
+        for (Books books1: books ){
 
-
-        System.out.println(this.FIO + "взял: " + books);
+        System.out.println(this.FIO + "взял: " + books1);}
     }
 
 
