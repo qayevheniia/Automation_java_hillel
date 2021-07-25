@@ -1,17 +1,29 @@
 package Lessons_10.TaskAnim;
 
-public abstract  class Animal {
+//создаем асбтрактныц класс
+public abstract class Animal {
     private String food;
     private String location;
+    private String animal;
 
-    public Animal(String food, String location) {
+    //для свойст делаем сеттеры и гетеры
+    public String getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(String animal) {
+        this.animal = animal;
+    }
+
+    //конструктор
+    public Animal(String food, String location, String animal) {
         this.food = food;
         this.location = location;
+        this.animal = animal;
     }
 
     protected Animal() {
     }
-
 
     public String getFood() {
         return food;
@@ -29,15 +41,19 @@ public abstract  class Animal {
         this.location = location;
     }
 
-    final public void sleep(){
-        System.out.println("Такое-то животное спит");
+    //finnal - последний вариант метода
+    final public void sleep() {
+        System.out.println(getAnimal() + " спит");
     }
 
-    public void eat(){
+
+    public void eat() {
         System.out.println(food);
     }
+//абстрактный метод только обьявляем, но реализовываем в классах
 
-    abstract void makeNoise();
-
+    public void makeNoise(){
+        System.out.println("Такое-то животное спит");
+    };
 
 }

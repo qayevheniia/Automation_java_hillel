@@ -1,27 +1,23 @@
 package Lessons_10.TaskAnim;
 
-public class Cat extends Animal{
+public class Horse extends Animal {
+    private String noice;
 
-   private String noice;
 
-
-    public Cat(String food, String location,  String noice, String animal) {
+    public Horse(String food, String location, String noice, String animal ) {
         super(food, location, animal);
-
         this.noice = noice;
 
         super.sleep();
     }
 
+    @Override
+    public void makeNoise() {
+        System.out.println(noice);
+    }
 
     @Override
     public void eat() {
         super.eat();
-    }
-
-    @Override
-    public void makeNoise() {
-        System.out.println(noice);
-
     }
 }
