@@ -10,6 +10,7 @@ public class DemoSeason {
 
         System.out.println("PLease enter any number between 1-4");
        int code;
+
         Scanner in = new Scanner(System.in);
         code = in.nextInt();
         if (code>4 || code<=0){
