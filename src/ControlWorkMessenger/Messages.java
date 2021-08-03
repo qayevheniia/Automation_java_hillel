@@ -1,8 +1,8 @@
 package ControlWorkMessenger;
 
 import java.beans.ExceptionListener;
-import java.io.IOException;
 import java.util.UnknownFormatConversionException;
+import java.util.*;
 
 public class Messages extends UserAbstr implements MessengerAbstr{
     int Message;
@@ -13,19 +13,16 @@ public class Messages extends UserAbstr implements MessengerAbstr{
     }
 
 
-    public void addNewMessage(String message) {
-        try{
-            throw new IOException("Couldn't send message");
+    public void addNewMessage(String message)  {
+//        try{
+////           code
+//        }
+//
+//        catch (ExceptionsMessanger e){
+//            System.err.println("We have a problem " +e.toString());
+//
+//        }
 
-        }
-        catch (IOException e){
-            System.err.println("We have a problem " +e.toString());
-
-        }
-
-        finally {
-
-        }
     }
 
     public void deleteMessage(int Message) {
