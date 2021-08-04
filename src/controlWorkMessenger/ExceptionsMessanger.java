@@ -1,8 +1,9 @@
-package ControlWorkMessenger;
+package controlWorkMessenger;
+
 
 public class ExceptionsMessanger extends Exception{
 
-     ExceptionsMessanger(String message) {
+     public ExceptionsMessanger(String message) {
         super(message);
     }
 }

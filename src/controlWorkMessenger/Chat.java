@@ -1,12 +1,13 @@
-package ControlWorkMessenger;
+package controlWorkMessenger;
 
 import java.util.Scanner;
 
-public class Chats implements MessengerAbstr {
+public class Chat implements MessengerInterface {
     String nameChat;
     User user1;
     User user2;
     private User[] users;
+
 
 
     //    create new chat
@@ -22,7 +23,7 @@ public class Chats implements MessengerAbstr {
 
     }
 
-    public Chats( String nameChat, User user1, User user2 ) {
+    public Chat(String nameChat, User user1, User user2 ) {
         this.nameChat = nameChat;
         this.user1 = user1;
         this.user2 = user2;
@@ -34,14 +35,19 @@ public class Chats implements MessengerAbstr {
 
 
     @Override
-    public void sendMessage() {
-        System.out.println("Отправляем сообщение в чат");
+    public void sendMessage(Message message) {
+        System.out.println(" ");
 
     }
 
     @Override
     public void getMessage() {
         System.out.println("Получаем сообщение в чат");
+
+    }
+
+    @Override
+    public void deleteMessage() {
 
     }
 }
