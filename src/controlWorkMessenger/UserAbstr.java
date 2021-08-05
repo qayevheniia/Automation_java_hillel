@@ -7,6 +7,8 @@ public abstract class UserAbstr {
     private String nativeLanguage;
     private String userRole;
 
+    public UserAbstr() {
+    }
 
     public UserAbstr(String loginName, int idUsers) {
         this.idUsers = idUsers;

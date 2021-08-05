@@ -30,25 +30,28 @@ public class TaskMapSet {
         myMap.put(voloda, toyota);
         myMap.put(zheka, kia);
         myMap.put(igor, vaz);
-        myMap.put(zheka, kia);
-        myMap.put(zheka, kia);
+        myMap.put(leonid, mitsub);
+        myMap.put(yulia, lexus);
 
-        int i = 1;
+        int i = 0;
 
-        for (Map.Entry<Driver, CarM> myMap1 : myMap.entrySet())
+//        for (Map.Entry<Driver, CarM> myMap1 : myMap.entrySet())
+//         {
+//            if (myMap1.getValue().engine.equals(Engine.electro)) {
+//                i+=1;
+//
+//            }
+//
+//        }
+                for ( CarM myMap1 : myMap.values())
          {
-            if (myMap1.getValue().engine.equals(Engine.electro)) {
+            if (myMap1.engine.equals(Engine.electro)) {
+                i+=1;
 
-                System.out.println(myMap1.getValue().model);
-            }
-            else {
-                System.out.println("else");
             }
 
-             System.out.println(myMap1.getValue().engine);
         }
-
-
+        System.out.println(i);
 
     }
 }

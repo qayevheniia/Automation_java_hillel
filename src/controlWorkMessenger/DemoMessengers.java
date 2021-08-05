@@ -1,15 +1,28 @@
 package controlWorkMessenger;
 
+import java.util.*;
+
+
 public class DemoMessengers {
+
+
 
     public static void main(String[] args) {
 //        переделать на лист
-        User[] user = new User[2];
-        user[0] = new User("Motytskaya Eugeniia", "1", "Zhenya", "motyt@gmail.com.ua", UserStatusIndications.avaible);
-        user[1] = new User("Motytskai Igor", "2",  "Igor", "@gmail", UserStatusIndications.offline);
+
+         User newUser = new User();
+         newUser.signUp();
+        Map<Integer, User> myMap3 = new HashMap<>();
+        newUser.signIn();
 
 
-        Chat chat1 = new Chat("Friend", user[0], user[1]);
-
+//        Chat chat1 = new Chat("Family", myMap3.get(1), myMap3.get(2));
+//        Chat chat2 = new Chat("Work", myMap3.get(3), myMap3.get(2));
+//
+//        List<Chat> chatsUser2 = new ArrayList<>();
+//        chatsUser2.add(chat1);
+//        chatsUser2.add(chat2);
+        System.out.println(myMap3);
+        }
     }
-}
+

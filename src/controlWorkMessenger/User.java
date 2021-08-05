@@ -1,16 +1,21 @@
 package controlWorkMessenger;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class User extends UserAbstr implements AdminRole {
     private String FIO;
-    private int idUsers;
-    private final String email;
-    private final String password;
+    private String email;
+    private  String password;
     UserStatusIndications status;
     private UserRole userRole;
+    private String loginName;
+    Map<Integer, User> myMap3;
+    public User() {
+    }
 
-//експешен на юзер нейм
+
+    //експешен на юзер нейм
+
 
     public User(String FIO, String password, String loginName, String email, UserStatusIndications status) {
         super(loginName);
@@ -20,6 +25,10 @@ public class User extends UserAbstr implements AdminRole {
         this.status = status;
 
 
+    }
+
+    public User(Map<Integer, User> myMap) {
+        this.myMap3 = myMap;
     }
 
     public String getEmail() {
@@ -34,44 +43,76 @@ public class User extends UserAbstr implements AdminRole {
         this.FIO = FIO;
     }
 
-    public void setIdUsers(int idUsers) {
-        this.idUsers = idUsers;
-    }
 
 
     public String getFIO() {
         return FIO;
     }
 
-    public int getIdUsers() {
-        return idUsers;
+    @Override
+    public String toString() {
+        return "User{" +
+                "FIO='" + FIO + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", status=" + status +
+                ", userRole=" + userRole +
+                ", loginName='" + loginName + '\'' +
+                ", myMap3=" + myMap3 +
+                '}';
     }
 
+    public void signUp() {
+        int a=3;
+        int i = 0;
+        User newUser = null;
+//        взяла hashmap так как хочу получить id и они же будут ключем
+        myMap3 = new HashMap<>();
 
-    public void signUp(String loginName, String password, String FIO) {
+        while (a > 0) {
+            a-=1;
+            Scanner in = new Scanner(System.in);
+            System.out.println("Please, enter your FIO");
+            FIO = in.next();
+            System.out.println("Please, enter your password");
+            password = in.next();
+            System.out.println("Please, loginName");
+            loginName = in.next();
+            System.out.println("Please, email");
+            this.email = in.next();
+            i+=1;
+            newUser = new User(FIO, password, loginName, email, UserStatusIndications.avaible);
+            myMap3.put(i, newUser);
+            System.out.println(myMap3);
 
-        System.out.println("Регистрация прошла успешно");
+            System.out.println("Please add more users");
+        }
+        System.out.println(myMap3.toString());
+
     }
 
-    public String signIn(String loginName, String password) throws ExceptionsMessanger {
-
+    public User signIn() {
+        User user1 = null;
+        while (user1 == null){
         Scanner in = new Scanner(System.in);
-        System.out.println("Please, enter your name ");
+        System.out.println("Please, enter your loginName ");
         loginName = in.next();
-        System.out.println("Please, enter your password ");
+
+        System.out.println("Please, enter your Password ");
         password = in.next();
 
-        String result = " ";
 
-        if ((loginName.equals(getLoginName())) && (password.equals(getPassword()))) {
-            result = "login successful";
-        } else {
-            throw new ExceptionsMessanger("Wrong password or name");
+        for (User userOneChat : myMap3.values()) {
+            if ((myMap3.containsValue(loginName)) && (myMap3.containsValue(password))) {
+                user1 = userOneChat;
+                System.out.println("login successful");
 
+            } else {
+                System.out.println("Wrong password or name. Please try again.");
+            }
         }
-        System.out.println(result);
-        return result;
-
+        }
+        return user1;
     }
 
 
@@ -88,6 +129,7 @@ public class User extends UserAbstr implements AdminRole {
 
                 } else {
                 }
+
             }
         }
     }
