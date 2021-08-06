@@ -5,33 +5,22 @@ import java.util.*;
 
 public class Chat implements MessengerInterface {
     String nameChat;
-    User user1;
-    User user2;
+    User userMain;
+    User secondUser;
     List<User> users;
-    String loginName;
     String loginName2;
-//    можно ли использовать для получения ид?
+    Map<Integer, User> myMap3;
 
-    Map <Integer, User> chats;
-
-    Map<Integer, User> myMap3 = new HashMap<>();
-
-    public Chat(String nameChat, User user1, User user2) {
+    public Chat(String nameChat, User userMain, User secondUser) {
         this.nameChat = nameChat;
-        this.user1 = user1;
-        this.user2 = user2;
+        this.userMain = userMain;
+        this.secondUser = secondUser;
     }
 
     public void deleteChat() {
         System.out.println("Удаляем чат");
     }
 
-
-    @Override
-    public void sendMessage(Message message) {
-        System.out.println(" ");
-
-    }
 
     @Override
     public void getMessage() {
@@ -44,34 +33,39 @@ public class Chat implements MessengerInterface {
 
     }
 
-    public void creatNewChat() {
+    public Chat creatNewChat(User userMain) {
 
-        List<Chat> chatsUser2 = new ArrayList<>();
-
-        System.out.println("PLease enter your loginName");
+        Chat newChat = null;
 
         Scanner in = new Scanner(System.in);
-        loginName = in.next();
-        for (User userOneChat : myMap3.values()) {
-            if (myMap3.containsValue(loginName)) {
-                user1 = userOneChat;
+        System.out.println("PLease enter Name your chat");
+        String nameChat = in.next();
+
+        System.out.println("PLease enter loginName your friend");
+        String loginName2 = in.next();
+
+        for (User secondUser : myMap3.values()) {
+            if (secondUser.getLoginName().equals(loginName2)) {
+                System.out.println("We found his");
+                newChat = new Chat(nameChat, userMain, secondUser);
+                break;
+            } else {
+                System.out.println("Wrong userName your friend. Please try again.");
             }
         }
-            System.out.println("PLease enter your loginName your friend");
-            loginName2 = in.next();
-
-            for (User userTwoChat : myMap3.values()) {
-                if (myMap3.containsValue(loginName2)) {
-                    user2 = userTwoChat;
-                }
-            }
-
-                System.out.println("PLease enter name of new chat");
-                nameChat = in.next();
-            }
-            Chat chat1 = new Chat(nameChat, user1, user2);
-
-
+        return newChat;
+// надо дописать мап с новыми чатами
+    }
+    @Override
+    public void sendMessage(Chat newChat) {
+        System.out.println(" ");
 
     }
+
+    }
+
+
+
+
+
 

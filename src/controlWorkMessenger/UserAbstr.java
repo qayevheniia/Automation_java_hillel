@@ -3,8 +3,6 @@ package controlWorkMessenger;
 public abstract class UserAbstr {
     private int idUsers;
     private String loginName;
-    private String gender;
-    private String nativeLanguage;
     private String userRole;
 
     public UserAbstr() {
