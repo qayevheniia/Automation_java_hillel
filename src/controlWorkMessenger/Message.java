@@ -3,24 +3,30 @@ package controlWorkMessenger;
 
 
 public class Message {
-    public Message(int messageId, String text, String time, Boolean isRead) {
-        this.messageId = messageId;
-        this.text = text;
-        this.time = time;
-        this.isRead = isRead;
-    }
 
-    int messageId;
     String text;
     String time;
     Boolean isRead;
+    Chat newChat;
 
-    public int getMessageId() {
-        return messageId;
+    public Message() {
     }
 
-    public void setMessageId(int messageId) {
-        this.messageId = messageId;
+    public Message(String text, String time, Boolean isRead, Chat newChat) {
+        this.text = text;
+        this.time = time;
+        this.isRead = isRead;
+        this.newChat = newChat;
+    }
+
+    @Override
+    public String toString() {
+        return "Message{" +
+                "text='" + text + '\'' +
+                ", time='" + time + '\'' +
+                ", isRead=" + isRead +
+                ", newChat=" + newChat +
+                '}';
     }
 
     public String getText() {
